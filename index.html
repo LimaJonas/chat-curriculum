@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS import -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
+    <!-- Bootstrap JS import -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
+    <!-- Font awesome for icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/chat.js"></script>
+    <title>ChatBot - Curriculum</title>
+</head>
+<body class="bg-dark" onload="startPage()">
+    <div class="container-fluid h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-md-8 col-xl-6 chat">
+                <div class="card">
+                    <div class="card-header msg_head">
+                        <div class="d-flex bd-highlight">
+                            <div class="img_cont">
+                                <img src="img/bot.jpg" class="rounded-circle user_img">
+                                <span class="online_icon"></span>
+                            </div>
+                            <div class="user_info">
+                                <span>ChatBot Curriculum v0 DEMO</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body msg_card_body" id="msg">
+                        <!-- Mensagem -->
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <!-- <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span> -->
+                            </div>
+                            <textarea id="userText" class="form-control type_msg" placeholder="..."></textarea>
+                            <div class="input-group-append">                         
+                                <span class="input-group-text send_btn" id="send"><i class="fas fa-location-arrow"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

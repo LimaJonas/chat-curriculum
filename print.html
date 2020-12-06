@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print test</title>
+</head>
+<script>
+function loadComponents(){
+    document.getElementById("myName").innerHTML = sessionStorage.getItem("nameUser");
+    document.getElementById("years").innerHTML = sessionStorage.getItem("ageUser");
+    document.getElementById("address").innerHTML = sessionStorage.getItem("addressUser");
+    document.getElementById("civil").innerHTML = sessionStorage.getItem("civilUser");
+    document.getElementById("phone").innerHTML = sessionStorage.getItem("phoneUser");
+    document.getElementById("email").innerHTML = sessionStorage.getItem("emailUser");
+
+}
+</script>
+<body onload="loadComponents()">
+    <h2 id="myName"></h1>
+    <h2 id="years"></h2>
+    <h2 id="address"></h2>
+    <h2 id="civil"></h2>
+    <h2 id="phone"></h2>
+    <h2 id="email"></h2>
+</body>
+</html>
