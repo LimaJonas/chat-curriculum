@@ -414,8 +414,8 @@ function education(){
     document.getElementById("send").onclick = function() { saveEducation1() };   
 }
 function saveEducation1(){
-    var Education1Intitute = document.getElementById("userText").value;
-    sessionStorage.setItem("Education1Intitute", Education1Intitute);
+    var Education1Institute = document.getElementById("userText").value;
+    sessionStorage.setItem("Education1Institute", Education1Institute);
     document.getElementById("userText").value = ""; //clean textarea
 
     askEducation1Course();
@@ -468,21 +468,21 @@ function education2(){
     document.getElementById("userText").disabled = true; //Block textarea
     var line1 = createDivs() + "Certo! Você quer adicionar mais uma formação acadêmica?" + closeDivs();
     var line2 = createDivs() + "<a onclick='askEducation2Institute()'><b>Sim</b></a>" + closeDivs();
-    var line3 = createDivs() + "<b>Não, pular para cursos adicionais</b>" + closeDivs(); //Jump
+    var line3 = createDivs() + "<a onclick='finish()'><b>Não, terminar e imprimir</b></a>" + closeDivs(); //Jump
     
     document.getElementById("msg").innerHTML = line1 + line2 + line3;
 }
 //--
 function askEducation2Institute(){
     document.getElementById("userText").disabled = false; //unblock textarea
-    var line1 = createDivs() + "Okay! Digite o nome da instituição que estoudou." + closeDivs();
+    var line1 = createDivs() + "Okay! Digite o nome da instituição que estudou." + closeDivs();
     
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation2Institute() };   
 }
 function saveEducation2Institute(){
-    var Education2Intitute = document.getElementById("userText").value;
-    sessionStorage.setItem("Education2Intitute", Education2Intitute);
+    var Education2Institute = document.getElementById("userText").value;
+    sessionStorage.setItem("Education2Institute", Education2Institute);
     document.getElementById("userText").value = ""; //clean textarea
 
     askEducation2Course();
@@ -535,21 +535,21 @@ function education3(){
     document.getElementById("userText").disabled = true; //Block textarea
     var line1 = createDivs() + "Ok! Você adicionou duas formações acadêmicas. Deseja adicionar mais uma?" + closeDivs();
     var line2 = createDivs() + "<a onclick='askEducation3Institute()'><b>Sim</b></a>" + closeDivs();
-    var line3 = createDivs() + "<b>Não, pular para cursos adicionais</b>" + closeDivs(); //Jump
+    var line3 = createDivs() + "<a onclick='finish()'><b>Não, terminar e imprimir</b></a>" + closeDivs(); //Jump
     
     document.getElementById("msg").innerHTML = line1 + line2 + line3;
 }
 //--
 function askEducation3Institute(){
     document.getElementById("userText").disabled = false; //unblock textarea
-    var line1 = createDivs() + "Okay! Digite o nome da instituição que estoudou." + closeDivs();
+    var line1 = createDivs() + "Okay! Digite o nome da instituição que estudou." + closeDivs();
     
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation3Institute() };   
 }
 function saveEducation3Institute(){
-    var Education3Intitute = document.getElementById("userText").value;
-    sessionStorage.setItem("Education3Intitute", Education3Intitute);
+    var Education3Institute = document.getElementById("userText").value;
+    sessionStorage.setItem("Education3Institute", Education3Institute);
     document.getElementById("userText").value = ""; //clean textarea
 
     askEducation3Course();
@@ -595,9 +595,15 @@ function saveEducation3City(){
     sessionStorage.setItem("Education3City", Education3City);
     document.getElementById("userText").value = ""; //clean textarea
 
-    print();     
+    finish();     
 }
 //--
+function finish(){
+    var line1 = createDivs() + "Okay! reunimos as informações, agora clique <a onclick='print()'><b>aqui</b> para ir para a pagina do curriculo e imprimi-lo.'." + closeDivs();
+
+    document.getElementById("msg").innerHTML = line1;
+    document.getElementById("send").onclick = function() { saveEducation3City() };  
+}
 function print(){
     window.location.href="print.html";
 }

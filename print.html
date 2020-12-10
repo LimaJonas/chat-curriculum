@@ -3,96 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Print test</title>
+    <!-- Bootstrap CSS import -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
+    <!-- Bootstrap JS import -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
+    <!-- Font awesome for icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+
+    <title>Print Curriculum</title>
 </head>
+<style>
+    a:hover{
+        cursor: default;
+    }
+</style>
 <script>
 function loadComponents(){
-    document.getElementById("nameUser").innerHTML = sessionStorage.getItem("nameUser"); //Nome
-    document.getElementById("ageUser").innerHTML = sessionStorage.getItem("ageUser"); //Idade
-    document.getElementById("addressUser").innerHTML = sessionStorage.getItem("addressUser"); //Endereço
-    document.getElementById("civilUser").innerHTML = sessionStorage.getItem("civilUser"); //Estado Civil
-    document.getElementById("phoneUser").innerHTML = sessionStorage.getItem("phoneUser"); //Telefone
-    document.getElementById("emailUser").innerHTML = sessionStorage.getItem("emailUser"); //Email
-    document.getElementById("driveUser").innerHTML = sessionStorage.getItem("driveUser"); //CNH
-    document.getElementById("objectiveUser").innerHTML = sessionStorage.getItem("objectiveUser"); //Objetivo
-    //Work 1
-    document.getElementById("Work1Name").innerHTML = sessionStorage.getItem("Work1Name"); //Nome da empresa
-    document.getElementById("Work1Date").innerHTML = sessionStorage.getItem("Work1Date"); //Periodo trabalhado
-    document.getElementById("Work1City").innerHTML = sessionStorage.getItem("Work1City"); //Cidade
-    document.getElementById("Work1Position").innerHTML = sessionStorage.getItem("Work1Position"); //Cargo
-    document.getElementById("Work1Description").innerHTML = sessionStorage.getItem("Work1Description"); //Descrição
-    //Work 2
-    document.getElementById("Work2Name").innerHTML = sessionStorage.getItem("Work2Name"); //Nome da empresa
-    document.getElementById("Work2Date").innerHTML = sessionStorage.getItem("Work2Date"); //Periodo trabalhado
-    document.getElementById("Work2City").innerHTML = sessionStorage.getItem("Work2City"); //Cidade
-    document.getElementById("Work2Position").innerHTML = sessionStorage.getItem("Work2Position"); //Cargo
-    document.getElementById("Work2Description").innerHTML = sessionStorage.getItem("Work2Description"); //Descrição
-    //Work 3
-    document.getElementById("Work3Name").innerHTML = sessionStorage.getItem("Work3Name"); //Nome empresa
-    document.getElementById("Work3Date").innerHTML = sessionStorage.getItem("Work3Date"); //Periodo trabalhado
-    document.getElementById("Work3City").innerHTML = sessionStorage.getItem("Work3City"); //Cidade
-    document.getElementById("Work3Position").innerHTML = sessionStorage.getItem("Work3Position"); //Cargo
-    document.getElementById("Work3Description").innerHTML = sessionStorage.getItem("Work3Description"); //Descrição
-    //Education 1
-    document.getElementById("Education1Institute").innerHTML = sessionStorage.getItem("Education1Institute"); //Nome da instituição
-    document.getElementById("Education1Course").innerHTML = sessionStorage.getItem("Education1Course"); //Curso
-    document.getElementById("Education1Date").innerHTML = sessionStorage.getItem("Education1Date"); //Periodo
-    document.getElementById("Education1City").innerHTML = sessionStorage.getItem("Education1City"); //Cidade
-    //Education 2
-    document.getElementById("Education2Institute").innerHTML = sessionStorage.getItem("Education2Institute"); //Email
-    document.getElementById("Education2Course").innerHTML = sessionStorage.getItem("Education2Course"); //Curso
-    document.getElementById("Education2Date").innerHTML = sessionStorage.getItem("Education2Date"); //Periodo
-    document.getElementById("Education2City").innerHTML = sessionStorage.getItem("Education2City"); //Cidade
-    //Education 3
-    document.getElementById("Education3Institute").innerHTML = sessionStorage.getItem("Education3Institute"); //Email
-    document.getElementById("Education3Course").innerHTML = sessionStorage.getItem("Education3Course"); //Curso
-    document.getElementById("Education3Date").innerHTML = sessionStorage.getItem("Education3Date"); //Periodo
-    document.getElementById("Education3City").innerHTML = sessionStorage.getItem("Education3City"); //Cidade
+    // document.getElementById("nameUser").innerHTML = sessionStorage.getItem("nameUser"); //Nome
+    // document.getElementById("ageUser").innerHTML = sessionStorage.getItem("ageUser"); //Idade
+    // document.getElementById("addressUser").innerHTML = sessionStorage.getItem("addressUser"); //Endereço
+    // document.getElementById("civilUser").innerHTML = sessionStorage.getItem("civilUser"); //Estado Civil
+    // document.getElementById("phoneUser").innerHTML = sessionStorage.getItem("phoneUser"); //Telefone
+    // document.getElementById("emailUser").innerHTML = sessionStorage.getItem("emailUser"); //Email
+    // document.getElementById("driveUser").innerHTML = sessionStorage.getItem("driveUser"); //CNH
+    // document.getElementById("objectiveUser").innerHTML = sessionStorage.getItem("objectiveUser"); //Objetivo
+    // //Work 1
+    // document.getElementById("Work1Name").innerHTML = sessionStorage.getItem("Work1Name"); //Nome da empresa
+    // document.getElementById("Work1Date").innerHTML = sessionStorage.getItem("Work1Date"); //Periodo trabalhado
+    // document.getElementById("Work1City").innerHTML = sessionStorage.getItem("Work1City"); //Cidade
+    // document.getElementById("Work1Position").innerHTML = sessionStorage.getItem("Work1Position"); //Cargo
+    // document.getElementById("Work1Description").innerHTML = sessionStorage.getItem("Work1Description"); //Descrição
+    // //Work 2
+    // document.getElementById("Work2Name").innerHTML = sessionStorage.getItem("Work2Name"); //Nome da empresa
+    // document.getElementById("Work2Date").innerHTML = sessionStorage.getItem("Work2Date"); //Periodo trabalhado
+    // document.getElementById("Work2City").innerHTML = sessionStorage.getItem("Work2City"); //Cidade
+    // document.getElementById("Work2Position").innerHTML = sessionStorage.getItem("Work2Position"); //Cargo
+    // document.getElementById("Work2Description").innerHTML = sessionStorage.getItem("Work2Description"); //Descrição
+    // //Work 3
+    // document.getElementById("Work3Name").innerHTML = sessionStorage.getItem("Work3Name"); //Nome empresa
+    // document.getElementById("Work3Date").innerHTML = sessionStorage.getItem("Work3Date"); //Periodo trabalhado
+    // document.getElementById("Work3City").innerHTML = sessionStorage.getItem("Work3City"); //Cidade
+    // document.getElementById("Work3Position").innerHTML = sessionStorage.getItem("Work3Position"); //Cargo
+    // document.getElementById("Work3Description").innerHTML = sessionStorage.getItem("Work3Description"); //Descrição
+    // //Education 1
+    // document.getElementById("Education1Institute").innerHTML = sessionStorage.getItem("Education1Institute"); //Nome da instituição
+    // document.getElementById("Education1Course").innerHTML = sessionStorage.getItem("Education1Course"); //Curso
+    // document.getElementById("Education1Date").innerHTML = sessionStorage.getItem("Education1Date"); //Periodo
+    // document.getElementById("Education1City").innerHTML = sessionStorage.getItem("Education1City"); //Cidade
+    // //Education 2
+    // document.getElementById("Education2Institute").innerHTML = sessionStorage.getItem("Education2Institute"); //Email
+    // document.getElementById("Education2Course").innerHTML = sessionStorage.getItem("Education2Course"); //Curso
+    // document.getElementById("Education2Date").innerHTML = sessionStorage.getItem("Education2Date"); //Periodo
+    // document.getElementById("Education2City").innerHTML = sessionStorage.getItem("Education2City"); //Cidade
+    // //Education 3
+    // document.getElementById("Education3Institute").innerHTML = sessionStorage.getItem("Education3Institute"); //Email
+    // document.getElementById("Education3Course").innerHTML = sessionStorage.getItem("Education3Course"); //Curso
+    // document.getElementById("Education3Date").innerHTML = sessionStorage.getItem("Education3Date"); //Periodo
+    // document.getElementById("Education3City").innerHTML = sessionStorage.getItem("Education3City"); //Cidade
     
+var nameUser = sessionStorage.getItem("nameUser"); //Nome
+var ageUser = sessionStorage.getItem("ageUser"); //Idade
+var addressUser = sessionStorage.getItem("addressUser"); //Endereço
+var civilUser = sessionStorage.getItem("civilUser"); //Estado Civil
+var phoneUser = sessionStorage.getItem("phoneUser"); //Telefone
+var emailUser = sessionStorage.getItem("emailUser"); //Email
+var driveUser = sessionStorage.getItem("driveUser"); //CNH
+var objectiveUser = sessionStorage.getItem("objectiveUser"); //Objetivo
+//Work 1
+var Work1Name = sessionStorage.getItem("Work1Name"); //Nome da empresa
+var Work1Date = sessionStorage.getItem("Work1Date"); //Periodo trabalhado
+var Work1City = sessionStorage.getItem("Work1City"); //Cidade
+var Work1Position = sessionStorage.getItem("Work1Position"); //Cargo
+var Work1Description = sessionStorage.getItem("Work1Description"); //Descrição
+//Work 2
+var Work2Name = sessionStorage.getItem("Work2Name"); //Nome da empresa
+var Work2Date = sessionStorage.getItem("Work2Date"); //Periodo trabalhado
+var Work2City = sessionStorage.getItem("Work2City"); //Cidade
+var Work2Position = sessionStorage.getItem("Work2Position"); //Cargo
+var Work2Description = sessionStorage.getItem("Work2Description"); //Descrição
+//Work 3
+var Work3Name = sessionStorage.getItem("Work3Name"); //Nome empresa
+var Work3Date = sessionStorage.getItem("Work3Date"); //Periodo trabalhado
+var Work3City = sessionStorage.getItem("Work3City"); //Cidade
+var Work3Position = sessionStorage.getItem("Work3Position"); //Cargo
+var Work3Description = sessionStorage.getItem("Work3Description"); //Descrição
+//Education 1
+var Education1Institute = sessionStorage.getItem("Education1Institute"); //Nome da instituição
+var Education1Course = sessionStorage.getItem("Education1Course"); //Curso
+var Education1Date = sessionStorage.getItem("Education1Date"); //Periodo
+var Education1City = sessionStorage.getItem("Education1City"); //Cidade
+//Education 2
+var Education2Institute = sessionStorage.getItem("Education2Institute"); //Email
+var Education2Course = sessionStorage.getItem("Education2Course"); //Curso
+var Education2Date = sessionStorage.getItem("Education2Date"); //Periodo
+var Education2City = sessionStorage.getItem("Education2City"); //Cidade
+//Education 3
+var Education3Institute = sessionStorage.getItem("Education3Institute"); //Email
+var Education3Course = sessionStorage.getItem("Education3Course"); //Curso
+var Education3Date = sessionStorage.getItem("Education3Date"); //Periodo
+var Education3City = sessionStorage.getItem("Education3City"); //Cidade
+
+
+// ====================================================
+var header = "<div class='col-12'>                                                  "+
+"           <p class='text-secondary'>                                              "+
+"               <h2 class='main-text shadow-text'>"+ nameUser +"</h2>               "+
+"               "+ civilUser +", "+ ageUser +" anos.<br>                            "+
+"               "+ addressUser +"<br>                                               "+
+"               Celular: "+ phoneUser +" / Email: "+ emailUser +"</a><br>        "+
+"               <a id='driveLicense'></a>                                            "+
+"               </p>                                                                "+
+"       </div>                                                                      ";
+// ---
+if(driveUser != null){
+var drive = "CNH: "+ driveUser +"<br>";
+}
+// -----
+var objective = "<div class='col-12'>                                                        "+
+"           <h3>Objetivo</h3>                                                       "+
+"           <p class='text-secondary'>"+ objectiveUser +"                           "+
+"           </p>                                                                    "+
+"       </div>                                                                      ";
+// ===================================================
+// WORK
+// ==================================================
+if(Work1Name != null){
+var work1 = "<div class='col-sm-6'>                                                      "+
+"           <p class='text-secondary'>                                              "+
+"           <ul class='text-secondary'>                                             "+
+"               <li>"+ Work1Date +"</li>                                            "+
+"               <li class='list-unstyled'>"+ Work1City +"</li>                      "+
+"           </ul>                                                                   "+
+"           </p>                                                                    "+
+"       </div>                                                                      "+
+"       <div class='col-sm-6'>                                                      "+
+"           <p class='text-secondary pt-3'>                                         "+
+"           "+ Work1Position +"<br>                                                 "+
+"           <i>"+ Work1Name +"</i><br><br>                                          "+
+"           "+ Work1Description +"                                                  "+
+"           </p>                                                                    "+
+"       </div>                                                                      ";
+}
+// ==============
+if(Work2Name != null){
+var work2 = "<div class='col-sm-6'>                                                      "+
+"           <p class='text-secondary'>                                              "+
+"           <ul class='text-secondary'>                                             "+
+"               <li>"+ Work2Date +"</li>                                            "+
+"               <li class='list-unstyled'>"+ Work2City +"</li>                      "+
+"           </ul>                                                                   "+
+"           </p>                                                                    "+
+"       </div>                                                                      "+
+"       <div class='col-sm-6'>                                                      "+
+"           <p class='text-secondary pt-3'>                                         "+
+"           "+ Work2Position +"<br>                                                 "+
+"           <i>"+ Work2Name +"</i><br><br>                                          "+
+"           "+ Work2Description +"                                                  "+
+"           </p>                                                                    "+
+"       </div>         ";
+}
+// ==================
+if(Work3Name != null){
+var work3 = "<div class='col-sm-6'>                                                      "+
+"           <p class='text-secondary'>                                              "+
+"           <ul class='text-secondary'>                                             "+
+"               <li>"+ Work3Date +"</li>                                            "+
+"               <li class='list-unstyled'>"+ Work3City +"</li>                      "+
+"           </ul>                                                                   "+
+"           </p>                                                                    "+
+"       </div>                                                                      "+
+"       <div class='col-sm-6'>                                                      "+
+"           <p class='text-secondary pt-3'>                                         "+
+"           "+ Work3Position +"<br>                                                 "+
+"           <i>"+ Work3Name +"</i><br><br>                                          "+
+"           "+ Work3Description +"                                                  "+
+"           </p>                                                                    "+
+"       </div>         ";
+}
+// =====================================================
+// Education
+// =====================================================
+if(Education1Institute != null){
+var education1 = "<div class='col-sm-6'>                                                     "+
+"        <p class='text-secondary'>                                                 "+
+"        <ul class='text-secondary'>                                                "+
+"           <li>"+ Education1Date +"</li>                                           "+
+"           <li class='list-unstyled'>"+ Education1City +"</li>                     "+
+"        </ul>                                                                      "+
+"        </p>                                                                       "+
+"       </div>                                                                      "+
+"       <div class='col-sm-6'>                                                      "+
+"           <p class='text-secondary pt-3'>                                         "+
+"               "+ Education1Course +"<br>                                          "+
+"               <i>"+ Education1Institute +"</i><br>                                "+ 
+"           </p>                                                                     "+
+"       </div>         ";
+}
+// =========
+if(Education2Institute != null){
+var education2 = "<div class='col-sm-6'>                                                     "+
+"        <p class='text-secondary'>                                                 "+
+"        <ul class='text-secondary'>                                                "+
+"           <li>"+ Education2Date +"</li>                                           "+
+"           <li class='list-unstyled'>"+ Education2City +"</li>                     "+
+"        </ul>                                                                      "+
+"        </p>                                                                       "+
+"       </div>                                                                      "+
+"       <div class='col-sm-6'>                                                      "+
+"           <p class='text-secondary pt-3'>                                         "+
+"               "+ Education2Course +"<br>                                          "+
+"               <i>"+ Education2Institute +"</i><br>                                "+ 
+"           </p>                                                                     "+
+"       </div>         ";
+}
+// =========
+if(Education3Institute != null){
+var education3 = "<div class='col-sm-6'>                                                     "+
+"        <p class='text-secondary'>                                                 "+
+"        <ul class='text-secondary'>                                                "+
+"           <li>"+ Education3Date +"</li>                                           "+
+"           <li class='list-unstyled'>"+ Education3City +"</li>                     "+
+"        </ul>                                                                      "+
+"        </p>                                                                       "+
+"       </div>                                                                      "+
+"       <div class='col-sm-6'>                                                      "+
+"           <p class='text-secondary pt-3'>                                         "+
+"               "+ Education3Course +"<br>                                          "+
+"               <i>"+ Education3Institute +"</i><br>                                "+ 
+"           </p>                                                                     "+
+"       </div>         ";
+}
+// ======================================
+
+document.getElementById('head').innerHTML = header;
+if(driveUser != null){
+document.getElementById('driveLicense').innerHTML = drive;
+}
+document.getElementById('obje').innerHTML = objective;
+// Work Check
+if(work3 != null){
+    document.getElementById('prof').innerHTML = work1 + work2 + work3;
+} else if(work2 != null){
+    document.getElementById('prof').innerHTML = work1 + work2;
+} else if(work1 != null){
+    document.getElementById('prof').innerHTML = work1;
+}
+// Education Check
+if(education3 != null){
+    document.getElementById('educ').innerHTML = education1 + education2 + education3;
+} else if(education2 != null){
+    document.getElementById('educ').innerHTML = education1 + education2;
+} else if(education1 != null){
+    document.getElementById('educ').innerHTML = education1;
+}
+
+
+
+window.print();
 
 }
 </script>
 <body onload="loadComponents()">
-    <h2 id="nameUser"></h1>
-    <h2 id="ageUser"></h2>
-    <h2 id="addressUser"></h2>
-    <h2 id="civilUser"></h2>
-    <h2 id="phoneUser"></h2>
-    <h2 id="emailUser"></h2>
-    <h2 id="driveUser"></h2>
-    <h2 id="objectiveUser"></h2>
-    
-    <h2 id="Work1Name"></h2>
-    <h2 id="Work1Date"></h2>
-    <h2 id="Work1City"></h2>
-    <h2 id="Work1Position"></h2>
-    <h2 id="Work1Description"></h2>
-
-    <h2 id="Work2Name"></h2>
-    <h2 id="Work2Date"></h2>
-    <h2 id="Work2City"></h2>
-    <h2 id="Work2Position"></h2>
-    <h2 id="Work2Description"></h2>
-
-    <h2 id="Work3Name"></h2>
-    <h2 id="Work3Date"></h2>
-    <h2 id="Work3City"></h2>
-    <h2 id="Work3Position"></h2>
-    <h2 id="Work3Description"></h2>
-
-    <h2 id="Education1Institute"></h2>
-    <h2 id="Education1Course"></h2>
-    <h2 id="Education1Date"></h2>
-    <h2 id="Education1City"></h2>
-
-    <h2 id="Education2Institute"></h2>
-    <h2 id="Education2Course"></h2>
-    <h2 id="Education2Date"></h2>
-    <h2 id="Education2City"></h2>
-
-    <h2 id="Education3Institute"></h2>
-    <h2 id="Education3Course"></h2>
-    <h2 id="Education3Date"></h2>
-    <h2 id="Education3City"></h2>
+    <div class='container p-5' style='line-height: 1.5'>
+        <div>
+            <div class='row' id="head"></div>
+        <hr>
+            <div class='row' id="obje"></div>
+        <hr>
+        </div>
+        
+        <div>
+            <h3>Experiência profissional</h3>
+            <div class='row' id="prof">
+                <!-- Professional -->
+            </div>
+        <hr>
+        </div>
+        
+        <div>
+            <h3>Formação acadêmica</h3>
+            <div class='row' id="educ">
+                <!-- Education -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
