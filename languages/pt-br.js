@@ -160,8 +160,14 @@ ptbr = {
         },
     },
 
-    
     // Finish
-    "finish": "Okay! reunimos as informações, agora clique <a onclick='print()'><b>aqui</b> para ir para a pagina do curriculo e imprimi-lo.",
+    "finish": "Okay! reunimos as informações, agora clique aqui para ir para a pagina do curriculo e imprimi-lo.",
+
+    // PRINT PAGE
+    "print": {
+        "objective": "Objetivo",
+        "work": "Experiência profissional",
+        "education": "Formação acadêmica",   
+    }
 
 }

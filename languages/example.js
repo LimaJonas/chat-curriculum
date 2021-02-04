@@ -165,4 +165,10 @@ var YOUR_LANGUAGE = {
     // Finish
     "finish": "",
 
+    // PRINT PAGE
+    "print": {
+        "objective": "",
+        "work": "",
+        "education": "",   
+    }
 }

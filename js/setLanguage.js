@@ -1,6 +1,7 @@
 // Change Language
 function changeLanguage(language){
-    switch(language){
+    var lang= sessionStorage.setItem("language", language);
+    switch(lang){
         // case 1:
         //     json = YOUR_LANGUAGE;
         //     break;
@@ -8,5 +9,4 @@ function changeLanguage(language){
             json = ptbr;
             break;
         }
-    menu();
 }

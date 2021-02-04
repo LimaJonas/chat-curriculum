@@ -16,6 +16,7 @@ document.addEventListener('keydown', function(e) {
 function startPage(){
     // Default Options
     changeLanguage(0);
+    menu();
 }
    
 // Menu
@@ -608,10 +609,11 @@ function saveEducation3City(){
 }
 //--
 function finish(){
-    var line1 = createDivs() + json.finish + closeDivs();
+    var line1 = createDivs() + "<a onclick='print()'>"+ json.finish +"</a>" + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
-    document.getElementById("send").onclick = function() { saveEducation3City() };  
+    document.getElementById("userText").disabled = true; //Block textarea
+
 }
 function print(){
     window.location.href="print.html";
