@@ -22,9 +22,9 @@ function startPage(){
 function menu(){
     document.getElementById("title").innerHTML = json.title;
 
-    var line1 = createDivs() + "Bem vindo ao criador de curriculos por chat" + closeDivs();
-    var line2 = createDivs() + "Vamos começar?" + closeDivs();
-    var line3 = createDivs() + "<a onclick='instructions()'>Clique para <b>Sim</b></a>" + closeDivs(); 
+    var line1 = createDivs() + json.menu.line1 + closeDivs();
+    var line2 = createDivs() + json.menu.line2 + closeDivs();
+    var line3 = createDivs() + "<a onclick='instructions()'>"+ json.menu.line3 +"</a>" + closeDivs(); 
 
     document.getElementById("msg").innerHTML = line1 + line2 + line3;
     document.getElementById("userText").disabled = true; //Block textarea
@@ -32,17 +32,17 @@ function menu(){
 
 //First instructions
 function instructions(){
-    var line1 = createDivs() + "<b>Leia com atenção!</b> Farei perguntas referentes ao seu curriculo e guardarei suas respostas para que possamos ao final imprimir ou salvar um PDF" + closeDivs();
-    var line2 = createDivs() + "Não guardarei suas informações comigo, então evite recarregar a pagina, ou todo progresso será perdido!" + closeDivs();
-    var line3 = createDivs() + "Lembre-se de verificar se as informações estão corretas antes de enviar, pois não há como editar as informações já enviadas" + closeDivs();
-    var line4 = createDivs() + "<a onclick='askName()'><b>Entendido!</b></a>" + closeDivs(); 
+    var line1 = createDivs() + json.instructions.line1 + closeDivs();
+    var line2 = createDivs() + json.instructions.line2 + closeDivs();
+    var line3 = createDivs() + json.instructions.line3 + closeDivs();
+    var line4 = createDivs() + "<a onclick='askName()'>"+ json.instructions.line4 +"</a>" + closeDivs(); 
 
     document.getElementById("msg").innerHTML = line1 + line2 + line3 + line4;
 }
 
 //Name
 function askName(){
-    var line1 = createDivs() + "Por favor, digite sue nome completo e aperte o botão para enviar" + closeDivs();
+    var line1 = createDivs() + json.name + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("userText").disabled = false; //unblock textarea
@@ -59,7 +59,7 @@ function saveName(){
 
 //Age
 function askAge(){
-    var line1 = createDivs() + "Ok, agora digite sua idade, coloque apenas os numeros" + closeDivs();   
+    var line1 = createDivs() + json.age + closeDivs();   
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveAge() };
 }
@@ -73,7 +73,7 @@ function saveAge(){
 
 //Address
 function askAddress(){
-    var line1 = createDivs() + "Certo, agora digite seu endereço completo, por exemplo 'Rua, Numero, Bairro, cidade, CEP, UF'" + closeDivs();   
+    var line1 = createDivs() + json.address + closeDivs();   
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveAddress() };
 }
@@ -87,7 +87,7 @@ function saveAddress(){
 
 //Civil
 function askCivil(){
-    var line1 = createDivs() + "Muito bem, agora por favor, escreva qual sua situção civil, por exemplo 'Solteiro' ou 'Casado'" + closeDivs();   
+    var line1 = createDivs() + json.civil + closeDivs();   
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveCivil() };
 }
@@ -101,7 +101,7 @@ function saveCivil(){
 
 //Phone
 function askPhone(){
-    var line1 = createDivs() + "Digite seu telefone para contato (XX) XXXX-XXXX" + closeDivs();   
+    var line1 = createDivs() + json.phone + closeDivs();   
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { savePhone() };
 }
@@ -115,7 +115,7 @@ function savePhone(){
 
 //Email
 function askEmail(){
-    var line1 = createDivs() + "Digite seu email para contato" + closeDivs();   
+    var line1 = createDivs() + json.email + closeDivs();   
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEmail() };
 }
@@ -131,16 +131,16 @@ function saveEmail(){
 function askDrive(){
     document.getElementById("userText").disabled = true; //Block textarea
 
-    var line1 = createDivs() + "Possui carteira de habilitação?" + closeDivs();
-    var line2 = createDivs() + "<a onclick='writeDrive()'><b>Sim.</b></a>" + closeDivs();
-    var line3 = createDivs() + "<a onclick='askObjective()'><b>Não. Pular para 'objetivo'</b></a>" + closeDivs();
+    var line1 = createDivs() + json.drive.line1 + closeDivs();
+    var line2 = createDivs() + "<a onclick='writeDrive()'>"+ json.drive.line2 +"</a>" + closeDivs();
+    var line3 = createDivs() + "<a onclick='askObjective()'>"+ json.drive.line3 +"</a>" + closeDivs();
     
     document.getElementById("msg").innerHTML = line1 + line2 + line3;
 }
 function writeDrive(){
     document.getElementById("userText").disabled = false; //unblock textarea
     
-    var line1 = createDivs() + "Ok, digite a categoria da habilitação. Por exemplo 'AB'" + closeDivs();
+    var line1 = createDivs() + json.drive.caseYes + closeDivs();
     
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveDrive() };
@@ -156,8 +156,8 @@ function saveDrive(){
 //Objective
 function askObjective(){
     document.getElementById("userText").disabled = false; //unblock textarea
-    var line1 = createDivs() + "Muito bem! concluimos a parte inicial com suas informações." + closeDivs();
-    var line2 = createDivs() + "Agora digite algo para colocarmos na sessão de '<b>objetivo</b>' do curriculo." + closeDivs();
+    var line1 = createDivs() + json.objective.line1 + closeDivs();
+    var line2 = createDivs() + json.objective.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveObjective() };
@@ -172,10 +172,10 @@ function saveObjective(){
 
 //Work 1
 function askWork1(){
-    var line1 = createDivs() + "Agora falaremos sobre suas <b>experiencias profissionais</b>." + closeDivs();
-    var line2 = createDivs() + "Que tal começar da mais recente para a mais antiga?" + closeDivs();
-    var line3 = createDivs() + "Digite o <b>nome da empresa</b> mais <b>recente</b> que trabalhou." + closeDivs();
-    var line4 = createDivs() + "Caso não queira preencher esta parte, clique <a onclick='education()'><b>aqui</b> para pular para Formação Acadêmica" + closeDivs(); //Jump for Education
+    var line1 = createDivs() + json.work1.line1 + closeDivs();
+    var line2 = createDivs() + json.work1.line2 + closeDivs();
+    var line3 = createDivs() + json.work1.line3 + closeDivs();
+    var line4 = createDivs() + "<a onclick='education()'>"+ json.work1.line4 +"</a>" + closeDivs(); //Jump for Education
 
     document.getElementById("msg").innerHTML = line1 + line2 + line3 + line4;
     document.getElementById("send").onclick = function() { saveWork1Name() };
@@ -189,8 +189,8 @@ function saveWork1Name(){
 }
 //--
 function askWork1Date(){
-    var line1 = createDivs() + "Ok, empresa <b>"+ sessionStorage.getItem("Work1Name") +"</b>." + closeDivs();
-    var line2 = createDivs() + "Digite agora quando foi que você trabalhou lá. Desse jeito 'Jan/2020 - Jun/2020'." + closeDivs();
+    var line1 = createDivs() + json.work1.work1Date.line1 +"<b>"+ sessionStorage.getItem("Work1Name") +"</b>." + closeDivs();
+    var line2 = createDivs() + json.work1.work1Date.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveWork1Date() };
@@ -204,7 +204,7 @@ function saveWork1Date(){
 }
 //--
 function askWork1City(){
-    var line1 = createDivs() + "Certo, digite agora a cidade aonde você trabalhou." + closeDivs();
+    var line1 = createDivs() + json.work1.work1City.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveWork1City() };
@@ -218,7 +218,7 @@ function saveWork1City(){
 }
 //---
 function askWork1Position(){
-    var line1 = createDivs() + "Muito bem. Agora digite qual era seu cargo na empresa." + closeDivs();
+    var line1 = createDivs() + json.work1.work1Position.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveWork1Position() };
@@ -232,7 +232,7 @@ function saveWork1Position(){
 }
 //--
 function askWork1Description(){
-    var line1 = createDivs() + "Por ultimo, descreva um pouco a sobre sua vaga." + closeDivs();
+    var line1 = createDivs() + json.work1.work1Description.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveWork1Description() };
@@ -247,9 +247,9 @@ function saveWork1Description(){
 //----
 function moreJob1(){
     document.getElementById("userText").disabled = true; //Block textarea
-    var line1 = createDivs() + "Feito! Deseja adicionar mais uma experiência profissional?" + closeDivs();
-    var line2 = createDivs() + "<a onclick='askWork2()'><b>Sim</b></a>" + closeDivs();
-    var line3 = createDivs() + "<a onclick='education()'><b>Não, pular para Formação Acadêmica</b></a>" + closeDivs(); //Jump education
+    var line1 = createDivs() + json.moreJob1.line1 + closeDivs();
+    var line2 = createDivs() + "<a onclick='askWork2()'>"+ json.moreJob1.line2 +"</a>" + closeDivs();
+    var line3 = createDivs() + "<a onclick='education()'>"+ json.moreJob1.line3 +"</a>" + closeDivs(); //Jump education
 
     document.getElementById("msg").innerHTML = line1 + line2 + line3;
     document.getElementById("send").onclick = function() { saveWork1Description() };   
@@ -258,8 +258,8 @@ function moreJob1(){
 //Work 2
 function askWork2(){
     document.getElementById("userText").disabled = false; //unblock textarea
-    var line1 = createDivs() + "Ok, segunda experiência profissional</b>." + closeDivs();
-    var line2 = createDivs() + "Digite o <b>nome da empresa</b> que trabalhou." + closeDivs();
+    var line1 = createDivs() + json.work2.line1 + closeDivs();
+    var line2 = createDivs() + json.work2.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveWork2Name() };
@@ -273,8 +273,8 @@ function saveWork2Name(){
 }
 //--
 function askWork2Date(){
-    var line1 = createDivs() + "Ok, empresa <b>"+ sessionStorage.getItem("Work2Name") +"</b>." + closeDivs();
-    var line2 = createDivs() + "Digite agora quando foi que você trabalhou lá. Desse jeito 'Jan/2020 - Jun/2020'." + closeDivs();
+    var line1 = createDivs() + json.work2.work2Date.line1 +"<b>"+ sessionStorage.getItem("Work2Name") +"</b>." + closeDivs();
+    var line2 = createDivs() + json.work2.work2Date.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveWork2Date() };
@@ -288,7 +288,7 @@ function saveWork2Date(){
 }
 //--
 function askWork2City(){
-    var line1 = createDivs() + "Certo, digite agora a cidade aonde você trabalhou." + closeDivs();
+    var line1 = createDivs() + json.work2.work2City.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveWork2City() };
@@ -302,7 +302,7 @@ function saveWork2City(){
 }
 //---
 function askWork2Position(){
-    var line1 = createDivs() + "Muito bem. Agora digite qual era seu cargo na empresa." + closeDivs();
+    var line1 = createDivs() + json.work2.work2Position.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveWork2Position() };
@@ -316,7 +316,7 @@ function saveWork2Position(){
 }
 //--
 function askWork2Description(){
-    var line1 = createDivs() + "Por ultimo, descreva um pouco a sobre sua vaga." + closeDivs();
+    var line1 = createDivs() + json.work2.work2Description.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveWork2Description() };
@@ -331,9 +331,9 @@ function saveWork2Description(){
 //----
 function moreJob2(){
     document.getElementById("userText").disabled = true; //Block textarea
-    var line1 = createDivs() + "Feito! Você adicionou duas experiências profissionais. Deseja adicionar mais uma?" + closeDivs();
-    var line2 = createDivs() + "<a onclick='askWork3()'><b>Sim</b></a>" + closeDivs();
-    var line3 = createDivs() + "<a onclick='education()'><b>Não, pular para Formação Acadêmica</b></a>" + closeDivs(); //Jump education
+    var line1 = createDivs() + json.moreJob2.line1 + closeDivs();
+    var line2 = createDivs() + "<a onclick='askWork3()'>"+ json.moreJob2.line2 +"</a>" + closeDivs();
+    var line3 = createDivs() + "<a onclick='education()'>"+ json.moreJob2.line3 +"</a>" + closeDivs(); //Jump education
 
     document.getElementById("msg").innerHTML = line1 + line2 + line3;
     document.getElementById("send").onclick = function() { saveWork1Description() };   
@@ -342,8 +342,8 @@ function moreJob2(){
 //Work 3
 function askWork3(){
     document.getElementById("userText").disabled = false; //unblock textarea
-    var line1 = createDivs() + "Ok, terceira experiência profissional</b>." + closeDivs();
-    var line2 = createDivs() + "Digite o <b>nome da empresa</b> que trabalhou." + closeDivs();
+    var line1 = createDivs() + json.work3.line1 + closeDivs();
+    var line2 = createDivs() + json.work3.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveWork3Name() };
@@ -357,8 +357,8 @@ function saveWork3Name(){
 }
 //--
 function askWork3Date(){
-    var line1 = createDivs() + "Ok, empresa <b>"+ sessionStorage.getItem("Work3Name") +"</b>." + closeDivs();
-    var line2 = createDivs() + "Digite agora quando foi que você trabalhou lá. Desse jeito 'Jan/2020 - Jun/2020'." + closeDivs();
+    var line1 = createDivs() + json.work3.work3Date.line1 +"<b>"+ sessionStorage.getItem("Work3Name") +"</b>." + closeDivs();
+    var line2 = createDivs() + json.work3.work3Date.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveWork3Date() };
@@ -372,7 +372,7 @@ function saveWork3Date(){
 }
 //--
 function askWork3City(){
-    var line1 = createDivs() + "Certo, digite agora a cidade aonde você trabalhou." + closeDivs();
+    var line1 = createDivs() + json.work3.work3City.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveWork3City() };
@@ -386,7 +386,7 @@ function saveWork3City(){
 }
 //---
 function askWork3Position(){
-    var line1 = createDivs() + "Muito bem. Agora digite qual era seu cargo na empresa." + closeDivs();
+    var line1 = createDivs() + json.work3.work3Position.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveWork3Position() };
@@ -400,7 +400,7 @@ function saveWork3Position(){
 }
 //--
 function askWork3Description(){
-    var line1 = createDivs() + "Por ultimo, descreva um pouco a sobre sua vaga." + closeDivs();
+    var line1 = createDivs() + json.work3.work3Description.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveWork3Description() };
@@ -416,8 +416,8 @@ function saveWork3Description(){
 //Education
 function education(){
     document.getElementById("userText").disabled = false; //unblock textarea
-    var line1 = createDivs() + "Feito! Você adicionou as experiências profissionais. Vamos agora falar sobre sua <b>Formação Acadêmica</b>." + closeDivs();
-    var line2 = createDivs() + "Digite o <b>nome da instituição</b> mais recente que estudou." + closeDivs();
+    var line1 = createDivs() + json.education1.line1 + closeDivs();
+    var line2 = createDivs() + json.education1.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveEducation1() };   
@@ -431,7 +431,7 @@ function saveEducation1(){
 }
 //--
 function askEducation1Course(){
-    var line1 = createDivs() + "Certo, agora digite o <b>nome do curso</b> que você fazia nessa instituição." + closeDivs();
+    var line1 = createDivs() + json.education1.education1Course.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation1Course() };  
@@ -445,8 +445,8 @@ function saveEducation1Course(){
 }
 //--
 function askEducation1Date(){
-    var line1 = createDivs() + "Quase acabando, digite por favor o período em que estudou ou vai estudar lá." + closeDivs();
-    var line2 = createDivs() + "Por exemplo, 'Jan/2020 - Dez/2022." + closeDivs();
+    var line1 = createDivs() + json.education1.education1Date.line1 + closeDivs();
+    var line2 = createDivs() + json.education1.education1Date.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveEducation1Date() };  
@@ -460,7 +460,7 @@ function saveEducation1Date(){
 }
 //--
 function askEducation1City(){
-    var line1 = createDivs() + "Por ultimo, digite agora a cidade onde cursou. Caso seja online apenas escreva 'Online'." + closeDivs();
+    var line1 = createDivs() + json.education1.education1City.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation1City() };  
@@ -475,16 +475,16 @@ function saveEducation1City(){
 //Education 2
 function education2(){
     document.getElementById("userText").disabled = true; //Block textarea
-    var line1 = createDivs() + "Certo! Você quer adicionar mais uma formação acadêmica?" + closeDivs();
-    var line2 = createDivs() + "<a onclick='askEducation2Institute()'><b>Sim</b></a>" + closeDivs();
-    var line3 = createDivs() + "<a onclick='finish()'><b>Não, terminar e imprimir</b></a>" + closeDivs(); //Jump
+    var line1 = createDivs() + json.education2.line1 + closeDivs();
+    var line2 = createDivs() + "<a onclick='askEducation2Institute()'>"+ json.education2.line2 +"</a>" + closeDivs();
+    var line3 = createDivs() + "<a onclick='finish()'>"+ json.education2.line3 +"</a>" + closeDivs(); //Jump
     
     document.getElementById("msg").innerHTML = line1 + line2 + line3;
 }
 //--
 function askEducation2Institute(){
     document.getElementById("userText").disabled = false; //unblock textarea
-    var line1 = createDivs() + "Okay! Digite o nome da instituição que estudou." + closeDivs();
+    var line1 = createDivs() + json.education2.education2Institute.line1 + closeDivs();
     
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation2Institute() };   
@@ -498,7 +498,7 @@ function saveEducation2Institute(){
 }
 //--
 function askEducation2Course(){
-    var line1 = createDivs() + "Certo, agora digite o <b>nome do curso</b> que você fazia nessa instituição." + closeDivs();
+    var line1 = createDivs() + json.education2.education2Course.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation2Course() };  
@@ -512,8 +512,8 @@ function saveEducation2Course(){
 }
 //--
 function askEducation2Date(){
-    var line1 = createDivs() + "Quase acabando, digite por favor o período em que estudou ou vai estudar lá." + closeDivs();
-    var line2 = createDivs() + "Por exemplo, 'Jan/2020 - Dez/2022." + closeDivs();
+    var line1 = createDivs() + json.education2.education2Date.line1 + closeDivs();
+    var line2 = createDivs() + json.education2.education2Date.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveEducation2Date() };  
@@ -527,7 +527,7 @@ function saveEducation2Date(){
 }
 //--
 function askEducation2City(){
-    var line1 = createDivs() + "Por ultimo, digite agora a cidade onde cursou. Caso seja online apenas escreva 'Online'." + closeDivs();
+    var line1 = createDivs() + json.education2.education2City.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation2City() };  
@@ -542,16 +542,16 @@ function saveEducation2City(){
 //Education3
 function education3(){
     document.getElementById("userText").disabled = true; //Block textarea
-    var line1 = createDivs() + "Ok! Você adicionou duas formações acadêmicas. Deseja adicionar mais uma?" + closeDivs();
-    var line2 = createDivs() + "<a onclick='askEducation3Institute()'><b>Sim</b></a>" + closeDivs();
-    var line3 = createDivs() + "<a onclick='finish()'><b>Não, terminar e imprimir</b></a>" + closeDivs(); //Jump
+    var line1 = createDivs() + json.education3.line1 + closeDivs();
+    var line2 = createDivs() + "<a onclick='askEducation3Institute()'>"+ json.education3.line2 +"</a>" + closeDivs();
+    var line3 = createDivs() + "<a onclick='finish()'>"+ json.education3.line3 +"</a>" + closeDivs(); //Jump
     
     document.getElementById("msg").innerHTML = line1 + line2 + line3;
 }
 //--
 function askEducation3Institute(){
     document.getElementById("userText").disabled = false; //unblock textarea
-    var line1 = createDivs() + "Okay! Digite o nome da instituição que estudou." + closeDivs();
+    var line1 = createDivs() + json.education3.education3Institute.line1 + closeDivs();
     
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation3Institute() };   
@@ -565,7 +565,7 @@ function saveEducation3Institute(){
 }
 //--
 function askEducation3Course(){
-    var line1 = createDivs() + "Certo, agora digite o <b>nome do curso</b> que você fazia nessa instituição." + closeDivs();
+    var line1 = createDivs() + json.education3.education3Course.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation3Course() };  
@@ -579,8 +579,8 @@ function saveEducation3Course(){
 }
 //--
 function askEducation3Date(){
-    var line1 = createDivs() + "Quase acabando, digite por favor o período em que estudou ou vai estudar lá." + closeDivs();
-    var line2 = createDivs() + "Por exemplo, 'Jan/2020 - Dez/2022." + closeDivs();
+    var line1 = createDivs() + json.education3.education3Date.line1 + closeDivs();
+    var line2 = createDivs() + json.education3.education3Date.line2 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1 + line2;
     document.getElementById("send").onclick = function() { saveEducation3Date() };  
@@ -594,7 +594,7 @@ function saveEducation3Date(){
 }
 //--
 function askEducation3City(){
-    var line1 = createDivs() + "Por ultimo, digite agora a cidade onde cursou. Caso seja online apenas escreva 'Online'." + closeDivs();
+    var line1 = createDivs() + json.education3.education3City.line1 + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation3City() };  
@@ -608,7 +608,7 @@ function saveEducation3City(){
 }
 //--
 function finish(){
-    var line1 = createDivs() + "Okay! reunimos as informações, agora clique <a onclick='print()'><b>aqui</b> para ir para a pagina do curriculo e imprimi-lo.'." + closeDivs();
+    var line1 = createDivs() + json.finish + closeDivs();
 
     document.getElementById("msg").innerHTML = line1;
     document.getElementById("send").onclick = function() { saveEducation3City() };  
