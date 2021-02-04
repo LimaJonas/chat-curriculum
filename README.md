@@ -13,8 +13,12 @@ Online resume creator with the help of a chatbot. To use, just go to [https://li
 
 [![Button](https://i.imgur.com/fIQQavy.jpg "Button")](https://i.imgur.com/fIQQavy.jpg "Button")
 
-- Finally, in "js/setLanguage.js" add the button number inside the Switch, as shown in the example. Change "YOUR_LANGUAGE" to the same name as the variable created in your "language/your_language.js" earlier.
+- in "js/setLanguage.js" add the button number inside the Switch, as shown in the example. Change "YOUR_LANGUAGE" to the same name as the variable created in your "language/your_language.js" earlier.
 
 [![changeLanguage](https://i.imgur.com/c5J0p01.jpg "changeLanguage")](https://i.imgur.com/c5J0p01.jpg "changeLanguage")
+
+- finally, in the "index.html" and "print.html" header, import the created language script, as shown in the example
+
+[![header](https://i.imgur.com/nTaTr1D.jpg "header")](https://i.imgur.com/nTaTr1D.jpg "header")
 
 In case of doubt. comment.
