@@ -15,12 +15,21 @@ document.addEventListener('keydown', function(e) {
 //On start page
 function startPage(){
     // Default Options
-    changeLanguage(0);
+    localStorage.setItem('page', 'index');
+    if (localStorage.getItem('language') == null) {
+        changeLanguage(0);
+    } else{
+        changeLanguage(localStorage.getItem('language'));
+    }
     menu();
 }
-   
+
 // Menu
 function menu(){
+    document.getElementById("modalTitle").innerHTML = json.modalTitle;
+    document.getElementById("modalBack").innerHTML = json.modalBack;
+    document.getElementById("modalButton").innerHTML = json.modalButton;
+    
     document.getElementById("title").innerHTML = json.title;
 
     var line1 = createDivs() + json.menu.line1 + closeDivs();

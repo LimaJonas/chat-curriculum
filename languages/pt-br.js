@@ -1,5 +1,8 @@
 ptbr = {
     "title": "Chat Curriculum",
+    "modalTitle": "Alterar idioma",
+    "modalBack": "Voltar",
+    "modalButton": "IDIOMA",
 
     "menu": {
         "line1": "Bem vindo ao criador de curriculos por chat",

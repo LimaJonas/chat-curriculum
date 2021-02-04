@@ -2,6 +2,9 @@
 // do not remove or add new lines
 var YOUR_LANGUAGE = {
     "title": "",
+    "modalTitle": "",
+    "modalBack": "",
+    "modalButton": "",
     
     "menu": {
         "line1": "",

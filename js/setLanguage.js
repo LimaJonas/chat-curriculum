@@ -1,7 +1,9 @@
 // Change Language
 function changeLanguage(language){
-    var lang= sessionStorage.setItem("language", language);
-    switch(lang){
+    localStorage.setItem("lang", language);
+
+    // Add your language option here (Don't use the number 0)
+    switch(language){
         // case 1:
         //     json = YOUR_LANGUAGE;
         //     break;
@@ -9,4 +11,11 @@ function changeLanguage(language){
             json = ptbr;
             break;
         }
+
+    
+
+
+    if(localStorage.getItem('page') == "index"){
+        menu();
+    } 
 }

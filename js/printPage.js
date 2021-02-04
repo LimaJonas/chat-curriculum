@@ -1,5 +1,7 @@
 function loadComponents(){
-    var lang = sessionStorage.getItem("language");
+    
+    localStorage.setItem("page", "print");
+    var lang = localStorage.getItem("language");
     changeLanguage(lang);
 
     document.getElementById("work").innerHTML = json.print.work;
