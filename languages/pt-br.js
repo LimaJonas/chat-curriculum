@@ -1,5 +1,5 @@
 ptbr = {
-    "title": "Chat Curricualum",
+    "title": "Chat Curriculum",
 
     "menu": {
         "line1": "Bem vindo ao criador de curriculos por chat",
@@ -129,6 +129,7 @@ ptbr = {
             "line1": "Okay! Digite o <b>nome da instituição</b> que estudou.",
         },
         "education2Course": {
+            "line1": "Certo, agora digite o <b>nome do curso</b> que você fazia nessa instituição.",
         },
         "education2Date": {
             "line1": "Quase acabando, digite por favor o <b>período</b> em que estudou ou vai estudar lá.",
