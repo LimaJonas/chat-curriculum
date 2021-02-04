@@ -1,0 +1,3 @@
+ptbr = {
+    "title": "Chat Curricualum",
+}

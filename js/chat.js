@@ -14,6 +14,14 @@ document.addEventListener('keydown', function(e) {
 
 //On start page
 function startPage(){
+    // Default Options
+    changeLanguage(0);
+}
+   
+// Menu
+function menu(){
+    document.getElementById("title").innerHTML = json.title;
+
     var line1 = createDivs() + "Bem vindo ao criador de curriculos por chat" + closeDivs();
     var line2 = createDivs() + "Vamos começar?" + closeDivs();
     var line3 = createDivs() + "<a onclick='instructions()'>Clique para <b>Sim</b></a>" + closeDivs(); 
@@ -21,6 +29,7 @@ function startPage(){
     document.getElementById("msg").innerHTML = line1 + line2 + line3;
     document.getElementById("userText").disabled = true; //Block textarea
 }
+
 //First instructions
 function instructions(){
     var line1 = createDivs() + "<b>Leia com atenção!</b> Farei perguntas referentes ao seu curriculo e guardarei suas respostas para que possamos ao final imprimir ou salvar um PDF" + closeDivs();
